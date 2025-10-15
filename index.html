@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>Flight Planner — Offline</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="panel">
+    <header>
+      <img src="assets/plane.svg" alt="logo" class="logo">
+      <h1>Flight Planner</h1>
+      <p class="muted">Offline • Touch & Click ready</p>
+    </header>
+
+    <div class="controls">
+      <button id="playBtn" class="primary">Play</button>
+      <button id="clearBtn" class="ghost">Clear</button>
+      <button id="undoBtn" class="ghost">Undo</button>
+      <button id="exportBtn" class="ghost">Export</button>
+      <label class="ghost file-label" for="importFile">Import</label>
+      <input id="importFile" type="file" accept="application/json">
+      <button id="snapBtn" class="ghost">Snap: <span id="snapState">On</span></button>
+      <button id="speedBtn" class="ghost">Speed: <span id="speedLabel">1x</span></button>
+      <p class="info">Tippe/Klicke um Wegpunkte zu setzen, Doppeltippen/-klicken pausiert.</p>
+    </div>
+
+    <div class="status">
+      <div>Waypoints: <strong id="wpCount">0</strong></div>
+      <div>Fuel: <strong id="fuel">100</strong>%</div>
+      <div>Score: <strong id="score">0</strong></div>
+    </div>
+  </aside>
+
+  <main class="map-container">
+    <canvas id="mapCanvas"></canvas>
+  </main>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
